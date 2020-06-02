@@ -2,13 +2,12 @@ import sys
 sys.path.append('../doubly_linked_list')
 from doubly_linked_list import DoublyLinkedList
 
-# dll = DoublyLinkedList(1)
-# print('test', dll.head)
 
 class RingBuffer:
     def __init__(self, capacity):
         self.capacity = capacity
-        self.data = [None for el in range(self.capacity)]
+        # self.data = [None for el in range(self.capacity)]
+        self.data = [None]*capacity
         self.tracker = -1
     
 
@@ -16,7 +15,6 @@ class RingBuffer:
     def append(self, item):
         self.tracker += 1
         position = self.tracker % self.capacity
-        # print(f"added: {self.tracker}, position: {position}")
         self.data[position] = item
 
     
@@ -27,17 +25,17 @@ class RingBuffer:
                 
     
 
-buffer = RingBuffer(5)
-buffer.append('a')
-print("buffer.get", buffer.get())
-buffer.append('b')
-buffer.append('c')
-buffer.append('d')
-buffer.append('e')
-buffer.append('f')
-buffer.append('g')
-buffer.append('h')
-buffer.append('i')
+# buffer = RingBuffer(5)
+# buffer.append('a')
+# print("buffer.get", buffer.get())
+# buffer.append('b')
+# buffer.append('c')
+# buffer.append('d')
+# buffer.append('e')
+# buffer.append('f')
+# buffer.append('g')
+# buffer.append('h')
+# buffer.append('i')
 
-print("buffer.get", buffer.get())
+# print("buffer.get", buffer.get())
 
