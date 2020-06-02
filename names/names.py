@@ -30,9 +30,6 @@ class BSTNode:
         self.right = None
         self.count = 1
 
-    def __str__(self):
-        return 'value: {0}, count: {1}'.format(self.value, self.count)
-
 def insert(root, value):
     if not root:
         return BSTNode(value)
@@ -72,6 +69,8 @@ def search(root, word, depth=1):
 # create BStree containing names_1
 names_tree = create(names_1) 
 
+# search for names_2 names_tree
+## add to duplicates list
 for name in names_2:
     if search(names_tree, name) is not None:
         duplicates.append(name)
